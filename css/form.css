@@ -1,0 +1,14 @@
+.form-add {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+}
+
+input[type=number] {
+    width: 40px;
+}
