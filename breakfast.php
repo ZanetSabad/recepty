@@ -25,7 +25,7 @@
         <section class="main-heading">
             <h1>Snídaně</h1>
         </section>
-        <section class="recipe-list">
+        <section class="individually-recipe-list-">
             <?php if(empty($recipe)): ?>
                 <p>Žádný recept nebyl nalezen</p>
             <?php else: ?>

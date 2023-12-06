@@ -1,0 +1,26 @@
+.recipe-list{
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+} 
+
+.weight {
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.basis{
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.method{
+    margin-bottom: 20px;
+}
+
