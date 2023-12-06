@@ -65,6 +65,10 @@
             <p class="method"><?= $recipe["method"]?></p>
             <?php  endif ?>    
         </section>
+        <section class="button">
+            <a href="">Edivat</a>
+            <a href="">Smazat</a>
+        </section>
     </main>
 
 

@@ -27,6 +27,7 @@
         <section>
             <a href="form.php">Přidat recept</a>
         </section>
+      
     </main>
 
     <?php require "assets/footer.php" ?>
