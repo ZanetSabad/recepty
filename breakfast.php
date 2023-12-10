@@ -33,7 +33,7 @@
                 <ul>
                 <?php foreach($recipe as $one_recipe) :?>
                     <li>
-                        <a href="recipe.php?id=<?= $one_recipe['id'] ?>"> <?= $one_recipe["name"] ?></a>
+                        <a href="one-recipe.php?id=<?= $one_recipe['id'] ?>"> <?= $one_recipe["name"] ?></a>
                     </li>                   
                 <?php endforeach ?>  
                 </ul>

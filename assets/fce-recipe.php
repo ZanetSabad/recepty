@@ -49,8 +49,8 @@
                 return mysqli_fetch_array($result, MYSQLI_ASSOC);
             }
         }
-    }        
-
+    }   
+ 
 
 
 ?>
