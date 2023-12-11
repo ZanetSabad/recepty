@@ -25,7 +25,7 @@
             <a href="other.php"><img src="img/other.png" alt="">Ostatní</a>
         </section>
         <section>
-            <a href="form.php">Přidat recept</a>
+            <a href="add-recipe.php">Přidat recept</a>
         </section>
       
     </main>
