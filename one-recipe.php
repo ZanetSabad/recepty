@@ -85,8 +85,8 @@
             <?php  endif ?>    
         </section>
         <section class="button">
-            <a href="edit-recipe.php?id=<?= $one_recipe['id']?>">Editovat</a>
-            <a href="delete-recipe.php">Smazat</a>
+            <a href="edit-recipe.php?id=<?=$one_recipe['id']?>">Editovat</a>
+            <a href="delete-recipe.php?id=<?=$one_recipe['id']?>">Smazat</a>
         </section>
     </main>
 

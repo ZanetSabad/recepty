@@ -152,4 +152,31 @@ require "url.php";
             }
     }
 
+
+    /**
+     * @param object $connection - připojení k databázi
+     * @param integer $id - id receptu
+     * 
+     * 
+     * @param void
+     * 
+     */
+
+    function deleteRecipe($connection, $id) {
+        $sql = "DELETE 
+                FROM recepty
+                WHERE id = ? ";
+
+                $stmt = mysqli_prepare($connection, $sql);
+
+                if($stmt === false) {
+                    echo mysqli_error($connection);
+                } else {
+                    mysqli_stmt_bind_param($stmt, "i", $id);
+                }
+
+                if(mysqli_stmt_execute($stmt)) {
+                    echo "recept byl smazán";
+                }
+    }
 ?>
