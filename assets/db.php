@@ -1,5 +1,6 @@
 <?php 
 
+<<<<<<< HEAD
 /**
  * Připojení k databázo
  * 
@@ -10,6 +11,8 @@
 function connectionDB() {
 
 
+=======
+>>>>>>> de30dadcf8c40fd803edfc0347cc4bfec5451c1f
     $db_host = "localhost";
     $db_user = "Zany";
     $db_password = "zany2589";
@@ -20,6 +23,7 @@ function connectionDB() {
     if(mysqli_connect_error()) {
         echo mysqli_connect_error();
         exit;
+<<<<<<< HEAD
     }
     return $connection;    
 }
@@ -32,4 +36,15 @@ function connectionDB() {
     // $result = mysqli_query($connection, $sql);
  
     // $recipe = mysqli_fetch_all($result, MYSQLI_ASSOC);
+=======
+    } else {
+        echo "Úspěšné připojení";
+    }
+
+    $sql = "SELECT * FROM recepty";
+
+    $result = mysqli_query($connection, $sql);
+ 
+    $recipe = mysqli_fetch_all($result, MYSQLI_ASSOC)
+>>>>>>> de30dadcf8c40fd803edfc0347cc4bfec5451c1f
 ?>

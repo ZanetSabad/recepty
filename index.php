@@ -25,9 +25,14 @@
             <a href="other.php"><img src="img/other.png" alt="">Ostatní</a>
         </section>
         <section>
+<<<<<<< HEAD
             <a href="add-recipe.php">Přidat recept</a>
         </section>
       
+=======
+            <a href="form.php">Přidat recept</a>
+        </section>
+>>>>>>> de30dadcf8c40fd803edfc0347cc4bfec5451c1f
     </main>
 
     <?php require "assets/footer.php" ?>
