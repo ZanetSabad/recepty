@@ -5,7 +5,7 @@
 
     $connection = connectionDB();
 
-    $recipe = getAllRecipe($connection, "id, name");
+    $one_recipe = getAllRecipe($connection, "id, name");
 
 ?>
 
@@ -27,11 +27,11 @@
             <h1>Snídaně</h1>
         </section>
         <section class="individually-recipe-list-">
-            <?php if(empty($recipe)): ?>
+            <?php if(empty($one_recipe)): ?>
                 <p>Žádný recept nebyl nalezen</p>
             <?php else: ?>
                 <ul>
-                <?php foreach($recipe as $one_recipe) :?>
+                <?php foreach($one_recipe as $one_recipe) :?>
                     <li>
                         <a href="one-recipe.php?id=<?= $one_recipe['id'] ?>"> <?= $one_recipe["name"] ?></a>
                     </li>                   

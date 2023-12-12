@@ -6,7 +6,7 @@
     $connection = connectionDB();
 
     if( isset($_GET["id"]) and is_numeric($_GET["id"])) {
-        $recipe = getRecipe($connection, $_GET["id"]);
+        $one_recipe = getRecipe($connection, $_GET["id"]);
         
     }
 
@@ -29,106 +29,64 @@
 
     <main>
         <section class="recipe-list">
-            <?php if($recipe === NULL): ?>
+            <?php if($one_recipe === NULL): ?>
                 <p>Recept neexistuje</p>
             <?php else : ?>
-                <h2><?= $recipe["name"] ?></h2>
+                <h2><?= $one_recipe["name"] ?></h2>
                 <div class="box">
                        <div class="weight">
-                        <?php if ($recipe["weight"] === null) : ?>
+                        <?php if ($one_recipe["weight"] === null) : ?>
                             <p>  </p>
                         <?php else : ?>
-                            <p> <?= $recipe["weight"]  . " " . "g" ?></p>
+                            <p> <?= $one_recipe["weight"]  . " " . "g" ?></p>
                         <?php endif ?>
 
-                        <?php if ($recipe["weight1"] === null) : ?>
+                        <?php if ($one_recipe["weight1"] === null) : ?>
                             <p> </p>
                         <?php else : ?>
-                            <p> <?= $recipe["weight1"]  . " " . "g" ?></p>
+                            <p> <?= $one_recipe["weight1"]  . " " . "g" ?></p>
                         <?php endif ?>
 
-                        <?php if ($recipe["weight2"] === null) : ?>
+                        <?php if ($one_recipe["weight2"] === null) : ?>
                             <p> </p>
                         <?php else : ?>
-                            <p> <?= $recipe["weight2"]  . " " . "g" ?></p>
+                            <p> <?= $one_recipe["weight2"]  . " " . "g" ?></p>
                         <?php endif ?>
 
-                        <?php if ($recipe["weight3"] === null) : ?>
+                        <?php if ($one_recipe["weight3"] === null) : ?>
                             <p> </p>
                             <?php else : ?>
-                            <p> <?= $recipe["weight3"]  . " " . "g" ?></p>
+                            <p> <?= $one_recipe["weight3"]  . " " . "g" ?></p>
                         <?php endif ?>
 
-                        <?php if ($recipe["weight4"] === null) : ?>
+                        <?php if ($one_recipe["weight4"] === null) : ?>
                             <p>  </p>
                         <?php else : ?>
-                            <p> <?= $recipe["weight4"]  . " " . "g" ?></p>
+                            <p> <?= $one_recipe["weight4"]  . " " . "g" ?></p>
                         <?php endif ?>
 
-                        <?php if ($recipe["weight5"] === 0) : ?>
+                        <?php if ($one_recipe["weight5"] === 0) : ?>
                             <p>  </p>
                         <?php else : ?>
-                            <p> <?= $recipe["weight5"]  . " " . "g" ?></p>
-                        <?php endif ?>
-                        
-                        <?php if ($recipe["weight6"] === 0) : ?>
-                            <p>  </p>
-                        <?php else : ?>
-                            <p> <?= $recipe["weight6"]  . " " . "g" ?></p>
-                        <?php endif ?>
-
-                        <?php if ($recipe["weight7"] === 0) : ?>
-                            <p>  </p>
-                        <?php else : ?>
-                            <p> <?= $recipe["weight7"]  . " " . "g" ?></p>
-                        <?php endif ?>
-
-                        <?php if ($recipe["weight8"] === 0) : ?>
-                            <p>  </p>
-                        <?php else : ?>
-                            <p> <?= $recipe["weight8"]  . " " . "g" ?></p>
-                        <?php endif ?>
-
-                        <?php if ($recipe["weight9"] === 0) : ?>
-                            <p>  </p>
-                        <?php else : ?>
-                            <p> <?= $recipe["weight9"]  . " " . "g" ?></p>
-                        <?php endif ?>
-
-                        <?php if ($recipe["weight10"] === 0) : ?>
-                            <p>  </p>
-                        <?php else : ?>
-                            <p> <?= $recipe["weight10"]  . " " . "g" ?></p>
-                        <?php endif ?>
-
-                        <?php if ($recipe["weight11"] === 0) : ?>
-                            <p>  </p>
-                        <?php else : ?>
-                            <p> <?= $recipe["weight11"]  . " " . "g" ?></p>
+                            <p> <?= $one_recipe["weight5"]  . " " . "g" ?></p>
                         <?php endif ?>
                   
                        </div>
                        <div class="basis">
-                            <p><?= $recipe["basis"]?></p>
-                            <p><?= $recipe["basis1"]?></p>
-                            <p><?= $recipe["basis2"]?></p>
-                            <p><?= $recipe["basis3"]?></p>
-                            <p><?= $recipe["basis4"]?></p>
-                            <p><?= $recipe["basis5"]?></p>
-                            <p><?= $recipe["basis6"]?></p>
-                            <p><?= $recipe["basis7"]?></p>
-                            <p><?= $recipe["basis8"]?></p>
-                            <p><?= $recipe["basis9"]?></p>
-                            <p><?= $recipe["basis10"]?></p>
-                            <p><?= $recipe["basis11"]?></p>
+                            <p><?= $one_recipe["basis"]?></p>
+                            <p><?= $one_recipe["basis1"]?></p>
+                            <p><?= $one_recipe["basis2"]?></p>
+                            <p><?= $one_recipe["basis3"]?></p>
+                            <p><?= $one_recipe["basis4"]?></p>
+                            <p><?= $one_recipe["basis5"]?></p>
                        </div>
                     </div>   
-            <p class="method"><?= $recipe["method"]?></p>
+            <p class="method"><?= $one_recipe["method"]?></p>
             <?php  endif ?>    
         </section>
         <section class="button">
-            <a href="">Edivat</a>
-            <a href="">Smazat</a>
+            <a href="edit-recipe.php?id=<?= $one_recipe['id']?>">Editovat</a>
+            <a href="delete-recipe.php">Smazat</a>
         </section>
     </main>
 
