@@ -62,25 +62,16 @@ require "url.php";
      * @param integer $weight - množství 1.ingredience
      * @param string $basis - název 1.ingredince
      * @param integer $weight1 - množství 2.ingredience
-     * @param string $basis - název 2.ingredince
-     * @param integer $weight - množství 3.ingredience
-     * @param string $basis - název 3.ingredince
-     * @param integer $weight - množství 4.ingredience
-     * @param string $basis - název 4.ingredince
-     * @param integer $weight - množství 5.ingredience
-     * @param string $basis - název 5.ingredince
-     * @param integer $weight - množství 6.ingredience
-     * @param string $basis - název 6.ingredince
-     * @param integer $weight - množství 7.ingredience
-     * @param string $basis - název 7.ingredince
-     * @param integer $weight - množství 8.ingredience
-     * @param string $basis - název 8.ingredince
-     * @param integer $weight - množství 9.ingredience
-     * @param string $basis - název 9.ingredince
-     * @param integer $weight - množství 10.ingredience
-     * @param string $basis - název 10.ingredince
-     * @param integer $weight - množství 11.ingredience
-     * @param string $basis - název 11.ingredince
+     * @param string $basis1 - název 2.ingredince
+     * @param integer $weight2 - množství 3.ingredience
+     * @param string $basis2 - název 3.ingredince
+     * @param integer $weight3 - množství 4.ingredience
+     * @param string $basis3 - název 4.ingredince
+     * @param integer $weight4 - množství 5.ingredience
+     * @param string $basis4 - název 5.ingredince
+     * @param integer $weight5 - množství 6.ingredience
+     * @param string $basis5 - název 6.ingredince
+     
      * @param string $method - popis postupu receptu 
      * 
      * @return void 
@@ -105,6 +96,60 @@ require "url.php";
             }
         }
  
+    }
+
+
+    /**
+     * @param object $connection - přihlášení do databáze
+     * @param string $name - název receptu 
+     * @param integer $weight - množství 1.ingredience
+     * @param string $basis - název 1.ingredince
+     * @param integer $weight1 - množství 2.ingredience
+     * @param string $basis1 - název 2.ingredince
+     * @param integer $weight2 - množství 3.ingredience
+     * @param string $basis2 - název 3.ingredince
+     * @param integer $weight3 - množství 4.ingredience
+     * @param string $basis3 - název 4.ingredince
+     * @param integer $weight4 - množství 5.ingredience
+     * @param string $basis4 - název 5.ingredince
+     * @param integer $weight5 - množství 6.ingredience
+     * @param string $basis5 - název 6.ingredince
+     * @param string $method - popis postupu receptu 
+     * 
+     * @return void
+     */
+
+    function editRecipe($connection, $name, $weight, $basis, $weight1, $basis1, $weight2, $basis2, $weight3, $basis3, $weight4, $basis4, $weight5, $basis5, $method, $id) {
+
+        $sql = " UPDATE recepty 
+                SET name = ?,
+                    weight = ?,
+                    basis = ?,
+                    weight1 = ?,
+                    basis1 = ?,
+                    weight2 = ?,
+                    basis2 = ?,
+                    weight3 = ?,
+                    basis3 = ?,
+                    weight4 = ?,
+                    basis4 = ?,
+                    weight5 = ?,
+                    basis5 = ?,
+                    method = ?
+                WHERE id = ?
+                ";
+                
+        $stmt = mysqli_prepare($connection, $sql);
+        
+            if($stmt === false) {
+                echo mysqli_error($connection);
+            } else {
+                mysqli_stmt_bind_param($stmt, "sisisisisisissi", $name, $weight, $basis, $weight1, $basis1, $weight2, $basis2, $weight3, $basis3, $weight4, $basis4, $weight5, $basis5, $method, $id);
+
+                if(mysqli_stmt_execute($stmt)) {
+                    echo "Informace v receptu byly změněny";
+                } 
+            }
     }
 
 ?>

@@ -33,6 +33,26 @@
         die("ID není zadáno, recept nenalezen");
     }
 
+        // po odeslání formuláře
+    if ($_SERVER["REQUEST_METHOD"] ==="POST") {
+
+        $name = $_POST["name"];
+        $weight = $_POST["weight"];
+        $basis = $_POST["basis"];
+        $weight = $_POST["weight1"];
+        $basis = $_POST["basis1"];
+        $weight = $_POST["weight2"];
+        $basis = $_POST["basis2"];
+        $weight = $_POST["weight3"];
+        $basis = $_POST["basis3"];
+        $weight = $_POST["weight4"];
+        $basis = $_POST["basis4"];
+        $weight = $_POST["weight5"];
+        $basis = $_POST["basis5"];
+
+
+        editRecipe($connection, $name, $weight, $basis, $weight1, $basis1, $weight2, $basis2, $weight3, $basis3, $weight4, $basis4, $weight5, $basis5, $method, $id);
+    }
 
 
 ?>
